@@ -17,8 +17,8 @@ class SlotMachineGUI:
         self.poblacion = list(configuracion.keys())
         self.pesos = [configuracion[k]['peso'] for k in self.poblacion]
         self.simbolos_disponibles = list(self.simbolos_visuales.values())
-        self.esta_girando = False  # Bloquea el botón mientras gira
-        self.tirada_final_claves = [] # Almacena el resultado real
+        self.esta_girando = False  
+        self.tirada_final_claves = [] 
 
         self.slot_font = font.Font(family="Arial", size=72, weight="bold")
         self.result_font = font.Font(family="Arial", size=18)
@@ -55,7 +55,7 @@ class SlotMachineGUI:
             root, 
             text="P A L A N C A", 
             font=self.lever_font, 
-            bg="#8B4513", # Color marrón de palanca
+            bg="#8B4513", 
             fg="white",
             relief='raised',
             borderwidth=5,
