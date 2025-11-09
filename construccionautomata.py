@@ -2,7 +2,6 @@ from automata.fa.nfa import NFA
 
 
 CONFIGURACION_SIMBOLOS = {
-    # ... (Pesos anteriores para alta frecuencia) ...
     '9': {'visual': ' 7 ', 'payout': 1000, 'peso': 5},   
     '8': {'visual': 'BAR', 'payout': 500,  'peso': 10},  
     '0': {'visual': '💎', 'payout': 250,  'peso': 5},   
@@ -15,7 +14,6 @@ CONFIGURACION_SIMBOLOS = {
     '1': {'visual': '🍒', 'payout': 5,    'peso': 400}, 
 }
 def crear_NFA_tragamonedas(configuracion):
-        # ... (Tu función crear_NFA_tragamonedas sin cambios) ...
     alfabeto = set(configuracion.keys())
     estados = {'q0', 'q_win'} 
     for s in alfabeto:
@@ -32,9 +30,8 @@ def crear_NFA_tragamonedas(configuracion):
     return NFA(states=estados, input_symbols=alfabeto, transitions=transiciones, 
             initial_state=estado_inicial, final_states=estados_finales)
 
-    # --- GENERADOR DE CÓDIGO GRAPHVIZ (Sin cambios) ---
 def generar_dot_automata(automata):
-        # ... (Tu función generar_dot_automata sin cambios) ...
+
     print("--- CÓDIGO GRAPHVIZ (DOT) ---")
     print("---------------------------------")
     print("digraph NFA {")
@@ -55,8 +52,6 @@ def generar_dot_automata(automata):
     print("Iniciando interfaz gráfica...")
         
 if __name__ == "__main__":
-    # 1. Llamada directa a la función (la forma natural en Python)
     nfa_tragamonedas = crear_NFA_tragamonedas(CONFIGURACION_SIMBOLOS)
-    
-    # 2. Llamada directa
+
     generar_dot_automata(nfa_tragamonedas)
