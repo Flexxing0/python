@@ -64,7 +64,7 @@ class SlotMachineGUI:
         self.lever_button.pack(pady=20, ipadx=30, ipady=10)
     
     def iniciar_juego(self):
-        """Bloquea el botón e inicia la animación."""
+        
         if self.esta_girando:
             return  
         self.esta_girando = True
@@ -79,7 +79,7 @@ class SlotMachineGUI:
         self.animar_rodillos(2, 5, 2000)
 
     def animar_rodillos(self, rodillo_idx, veces, duracion_total):
-        """Cambia el símbolo aleatoriamente para simular el giro."""
+        
         
         if veces > 0:
             simbolo_anim = random.choice(self.simbolos_disponibles)
@@ -92,7 +92,7 @@ class SlotMachineGUI:
             self.detener_rodillo(rodillo_idx)
     
     def detener_rodillo(self, rodillo_idx):
-        """Muestra el símbolo final del rodillo."""
+        
         
         clave_final = self.tirada_final_claves[rodillo_idx]
         visual_final = self.simbolos_visuales[clave_final]
@@ -102,7 +102,7 @@ class SlotMachineGUI:
             self.root.after(300, self.verificar_premio)
 
     def verificar_premio(self):
-        """Evalúa la tirada final y desbloquea el botón."""
+       
         
         tirada_str = "".join(self.tirada_final_claves)
         simbolo1, simbolo2, simbolo3 = tirada_str[0], tirada_str[1], tirada_str[2]
@@ -116,7 +116,7 @@ class SlotMachineGUI:
             color = "#28a745"
             
         else:
-            mensaje = "❌ ¡Oh no! Has perdido."
+            mensaje = "❌ Has perdido."
             color = "#dc3545"
 
         self.result_var.set(mensaje)
@@ -127,7 +127,7 @@ class SlotMachineGUI:
 
 if __name__ == "__main__":
     
-    print("Creando el autómata (NFA) con estado final único...")
+    print("Creando el autómata (NFA) con estado final único...")#se crea el codigo del automata para usarlo en graphviz online
     nfa_tragamonedas = construccionautomata.crear_NFA_tragamonedas(construccionautomata.CONFIGURACION_SIMBOLOS)
     print("Autómata creado.")
     construccionautomata.generar_dot_automata(nfa_tragamonedas)

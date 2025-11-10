@@ -32,7 +32,7 @@ def crear_NFA_tragamonedas(configuracion):
 
 def generar_dot_automata(automata):
 
-    print("--- CÓDIGO GRAPHVIZ (DOT) ---")
+    print("--- CÓDIGO GRAPHVIZ (DOT) ---")#codigo que genera un grafo en graphviz online
     print("---------------------------------")
     print("digraph NFA {")
     print("  rankdir=LR;")
